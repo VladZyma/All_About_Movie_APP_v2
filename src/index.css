@@ -1,3 +1,26 @@
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: inherit;
+    cursor: pointer;
+}
+
 [data-theme = 'light'] {
     margin: 0;
     background: white;
@@ -6,9 +29,102 @@
     margin: 0;
     background: black;
 }
+
+/*========= All movies ===========*/
+
 .movies_list {
     display: flex;
+    flex-direction: column;
+}
+.movie_card_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card_details {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    overflow: hidden;
+}
+.card_details:hover {
+    box-shadow: rgba(255, 0, 255, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.card_poster {
+    width: 100%;
+}
+.card_poster > img {
+    width: 100%;
+    height: auto;
+}
+.buttons_row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.prev_btn {
+    border: none;
+    cursor: pointer;
+    background: url("img/buttons/prev_arrow_btn.svg") center no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.prev_btn:disabled {
+    background: url("img/buttons/disabled_icon.svg") center no-repeat;
+}
+.next_btn {
+    border: none;
+    cursor: pointer;
+    background: url("img/buttons/next_arrow_btn.svg") center no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.next_btn:disabled {
+    background: url("img/buttons/disabled_icon.svg") center no-repeat;
 }
 .movie_card {
     margin-left: 15px;
+}
+
+/*========= Movie info card===========*/
+.movie_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.movie_info_top_row {
+    display: flex;
+    gap: 50px;
+}
+.movie_info_img_wrap {
+    width: 100%;
+    max-width: 650px;
+}
+.movie_info_img {
+    width: 100%;
+    vertical-align: top;
+}
+.movie_info_description_list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.movie_info_genres {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+.movie_info_genres_row {
+    display: flex;
+    gap: 15px;
+}
+.movie_info_genres_row > p {
+    margin: 0;
 }

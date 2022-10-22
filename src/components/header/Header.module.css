@@ -1,0 +1,91 @@
+.Header {
+    margin-bottom: 30px;
+}
+
+.Header_img_wrapper {
+    width: 100%;
+    height: 100px;
+    background: url("../../img/header/header_bg700X250.jpg");
+}
+
+.Header_nav_row {
+    display: flex;
+    justify-content: space-between;
+    background: #161642;
+}
+
+.Header_logo {
+    cursor: pointer;
+    padding: 10px;
+}
+.LogoTopRow {
+    display: flex;
+    gap: 16px;
+    font-size: 40px;
+    color: fuchsia;
+}
+.LogoBottomRow {
+    margin-top: -21px;
+    font-size: 40px;
+    color: fuchsia;
+    text-align: center;
+}
+
+.Header_nav_center_box {
+
+}
+
+.Header_nav_list {
+    display: flex;
+    gap: 30px
+}
+
+.Header_nav_list > li > a {
+    color: fuchsia;
+}
+
+.Header_right_box {
+
+}
+
+.HeaderAvatarWrapper {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.HeaderAvatar {
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.HeaderAvatarWrapper > p {
+    margin: 0;
+    color: fuchsia;
+}
+
+.HeaderAvatar > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+
+.Day {
+    border: 2px solid fuchsia;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url('../../img/buttons/moon_icon.svg') center no-repeat rgba(255, 0, 255, 0.5);
+}
+.Night {
+    border: 2px solid fuchsia;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url('../../img/buttons/sun_icon.svg') center no-repeat rgba(255, 0, 255, 0.5);
+}
