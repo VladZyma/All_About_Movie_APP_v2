@@ -30,7 +30,7 @@ const findMovies = createAsyncThunk(
     'moviesSlice/findMovies',
     async ({value, page}, {rejectWithValue}) => {
         try {
-            const {data:{results}} = await moviesService.findMovies(value, page);
+            const {data:{results}} = await moviesService.findMoviesByName(value, page);
             return results;
         } catch (e) {
             rejectWithValue(e.response.data?.errors);

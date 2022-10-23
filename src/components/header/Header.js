@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {useForm} from 'react-hook-form';
 import {useState} from "react";
 import {useDispatch} from "react-redux";
@@ -7,14 +7,23 @@ import {useThemeSwitcher} from "react-css-theme-switcher";
 
 import css from './Header.module.css';
 import avatar from '../../img/avatar/man_avatar_icon.png';
+import {moviesActions} from "../../redux";
 
 const Header = () => {
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const {register, handleSubmit, reset} = useForm();
 
-    const {switcher, themes, currentTheme, status} = useThemeSwitcher();
+    const {switcher, themes} = useThemeSwitcher();
     const [isDarkTheme, setIsDarkTheme] = useState(false);
 
 
+    function submit(movie) {
+        dispatch(moviesActions.SetSearchValue(movie.name));
+        navigate('/movies/found');
+        reset();
+    }
 
     function themeSwitcher() {
         setIsDarkTheme(prev => {
@@ -41,8 +50,8 @@ const Header = () => {
                 </div>
 
                 <div className={css.Header_nav_center_box}>
-                    <form>
-                        <input/>
+                    <form onSubmit={handleSubmit(submit)}>
+                        <input type={'text'} {...register('name')}/>
                     </form>
                     <nav>
                         <ul className={css.Header_nav_list}>

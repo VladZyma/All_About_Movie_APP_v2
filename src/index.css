@@ -28,6 +28,7 @@ button {
 [data-theme = 'dark'] {
     margin: 0;
     background: black;
+    color: white;
 }
 
 /*========= All movies ===========*/
