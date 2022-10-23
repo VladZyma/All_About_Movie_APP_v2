@@ -1,22 +1,19 @@
+import {useParams, useSearchParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from 'react';
-import {useSearchParams} from "react-router-dom";
-
-import {moviesActions, genreActions} from "../../redux";
-import {MoviesListCard, Loading} from "../../components";
-
-const MoviesList = () => {
 
 
+import {moviesActions} from "../../redux";
+import {MoviesByGenreListCard, Loading} from "../../components";
+
+const MoviesByGenreList = () => {
 
     const dispatch = useDispatch();
 
-    const [query, setQuery] = useSearchParams({page: '1'});
+    const {id: genreId} = useParams();
 
-    const {movies, page, loading} = useSelector(state => state.moviesReducer);
+    const {movies, loading, page} = useSelector(state => state.moviesReducer);
     const {genres} = useSelector(state => state.genresReducer);
-
-
 
     const moviesObj = movies.reduce((accum, movie) => {
         accum[movie.id] = movie;
@@ -28,15 +25,13 @@ const MoviesList = () => {
         return accum;
     }, {});
 
+    const [query, setQuery] = useSearchParams({page: '1'});
 
 
-    useEffect(() => {
-        dispatch(moviesActions.getMovies({page: query.get('page')}));
-    }, [query, dispatch]);
 
     useEffect(() => {
-        dispatch(genreActions.getGenres());
-    }, [dispatch]);
+        dispatch(moviesActions.getMoviesByGenre({genreId, page: query.get('page')}));
+    }, [genreId, dispatch, query]);
 
 
     function pageIncrement() {
@@ -47,11 +42,12 @@ const MoviesList = () => {
         setQuery(value => ({page: value.get('page') - 1}));
     }
 
+
     return (
         <div className={'movies_list'}>
             {loading && <Loading/>}
             <div>
-                <MoviesListCard movies={moviesObj} genres={genresObj}/>
+                <MoviesByGenreListCard movies={moviesObj} genres={genresObj}/>
             </div>
             { movies.length > 0 &&
                 <div className={'buttons_row'}>
@@ -62,4 +58,4 @@ const MoviesList = () => {
     );
 }
 
-export {MoviesList}
+export {MoviesByGenreList}

@@ -1,5 +1,8 @@
 .Header {
     margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .Header_img_wrapper {
@@ -11,11 +14,11 @@
 .Header_nav_row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background: #161642;
 }
 
 .Header_logo {
-    cursor: pointer;
     padding: 10px;
 }
 .LogoTopRow {
@@ -32,7 +35,31 @@
 }
 
 .Header_nav_center_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 
+.Header_form_input {
+    width: 400px;
+    height: auto;
+
+    outline: none;
+    border: 2px solid fuchsia;
+    border-radius: 3px;
+    background: url("../../img/search/search_icon.svg") right no-repeat;
+
+    font-size: 16px;
+}
+.Header_form_input:focus {
+    border: 2px solid greenyellow;
+    color: fuchsia;
+}
+
+.Header_nav {
+    display: flex;
+    gap: 30px;
 }
 
 .Header_nav_list {
@@ -45,7 +72,10 @@
 }
 
 .Header_right_box {
-
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .HeaderAvatarWrapper {
@@ -76,16 +106,16 @@
 .Day {
     border: 2px solid fuchsia;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: url('../../img/buttons/moon_icon.svg') center no-repeat rgba(255, 0, 255, 0.5);
 }
 .Night {
     border: 2px solid fuchsia;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: url('../../img/buttons/sun_icon.svg') center no-repeat rgba(255, 0, 255, 0.5);
 }

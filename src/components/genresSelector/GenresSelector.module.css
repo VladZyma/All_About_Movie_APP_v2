@@ -1,0 +1,8 @@
+.Select {
+    width: 150px;
+    outline: none;
+    border: 2px solid fuchsia;
+    border-radius: 3px;
+    color: fuchsia;
+    background: #161642;
+}

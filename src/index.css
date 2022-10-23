@@ -64,6 +64,7 @@ button {
     height: auto;
 }
 .buttons_row {
+    padding-bottom: 20px;
     display: flex;
     justify-content: center;
     gap: 50px;

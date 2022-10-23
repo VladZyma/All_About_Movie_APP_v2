@@ -9,7 +9,7 @@ const FoundMoviesList = () => {
 
     const dispatch = useDispatch();
 
-    const {foundMovies,searchValue, loading, foundPage} = useSelector(state => state.moviesReducer);
+    const {foundMovies,searchValue, loading} = useSelector(state => state.moviesReducer);
 
     const [newPage, setNewPage] = useState(1);
 

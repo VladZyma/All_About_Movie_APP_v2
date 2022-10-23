@@ -1,9 +1,11 @@
 export * from './header/Header';
-export * from './footer/Footer';
+
 
 
 export * from './moviesList/MoviesList';
 export * from './moviesListCard/MoviesListCard';
+export * from './moviesByGenreList/MoviesByGenreList';
+export * from './moviesByGenreListCard/MoviesByGenreListCard';
 export * from './movieInfo/MovieInfo';
 export * from './movieInfoCard/movieInfoCard';
 export * from './foundMoviesList/FoundMoviesList';

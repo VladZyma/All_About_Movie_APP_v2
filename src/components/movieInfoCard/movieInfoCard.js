@@ -6,7 +6,7 @@ import {urls} from "../../configs";
 
 const MovieInfoCard = (props) => {
 
-    const {state, state: {
+    const {state: {
         backdrop_path,
         genre_ids,
         original_language,
@@ -44,7 +44,7 @@ const MovieInfoCard = (props) => {
                             Original language : {original_language}
                         </li>
                         <li className={'movie_info_genres'}>
-                            Genres : <div className={'movie_info_genres_row'}>{genre_ids.map(id => <p key={id}>{genre[id].name}</p>)}</div>
+                            Genres : <div className={'movie_info_genres_row'}>{genre_ids.map(id => <p key={id}>{genre[id]?.name}</p>)}</div>
                         </li>
                         <li>
                             Release date : {release_date}

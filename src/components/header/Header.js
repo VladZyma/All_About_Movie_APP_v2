@@ -8,6 +8,7 @@ import {useThemeSwitcher} from "react-css-theme-switcher";
 import css from './Header.module.css';
 import avatar from '../../img/avatar/man_avatar_icon.png';
 import {moviesActions} from "../../redux";
+import {GenresSelector} from "../genresSelector/GenresSelector";
 
 const Header = () => {
 
@@ -51,20 +52,15 @@ const Header = () => {
 
                 <div className={css.Header_nav_center_box}>
                     <form onSubmit={handleSubmit(submit)}>
-                        <input type={'text'} {...register('name')}/>
+                        <input className={css.Header_form_input} type={'text'} {...register('name')}/>
                     </form>
-                    <nav>
+                    <nav className={css.Header_nav}>
                         <ul className={css.Header_nav_list}>
                             <li>
                                 <NavLink to={'/movies'}>All movies</NavLink>
                             </li>
-                            <li>
-                                <NavLink to={'/movies'}>All movies</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={'/movies'}>All movies</NavLink>
-                            </li>
                         </ul>
+                       <GenresSelector/>
                     </nav>
                 </div>
 
@@ -72,7 +68,7 @@ const Header = () => {
 
                     <div className={css.HeaderAvatarWrapper}>
                         <div className={css.HeaderAvatar}>
-                            <img src={avatar}/>
+                            <img src={avatar} alt={''}/>
                         </div>
                         <p>user name</p>
                     </div>
